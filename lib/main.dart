@@ -19,6 +19,9 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: Scaffold(
+        appBar: AppBar(
+          title: const Text('My First DiegoVeloper Review'),
+        ),
         body: ListProducts(),
       ),
     );
