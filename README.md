@@ -17,4 +17,4 @@ Este proyecto en Flutter se creó con el propósito de listar productos de [escu
    ```bash
    git clone [url-del-repositorio]
 
-![Uploading 2023-09-18 16.48.30.gif…]()
+![Demo de la app](https://imgur.com/jPTc8KV)
