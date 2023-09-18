@@ -1,16 +1,16 @@
-# diegoveloperreview
+# Flutter Product List App 📱
 
-A new Flutter project.
+Este proyecto en Flutter se creó con el propósito de listar productos de [escuelajs API](https://api.escuelajs.co/api/v1/products). Es parte de un reto de revisión de código, con el enfoque de intentar construir la funcionalidad sin depender demasiado de librerías externas.
 
-## Getting Started
+## 🌟 Características:
 
-This project is a starting point for a Flutter application.
+- **API Manager**: Una clase responsable de hacer llamadas HTTP para recuperar la lista de productos de la API.
+- **Listado de Productos**: Una vez recuperada la lista, se presenta en una interfaz de usuario amigable y eficiente.
+- **Caché de Imágenes**: Para un rendimiento óptimo, las imágenes se almacenan en caché utilizando la librería `cached_network_image`.
 
-A few resources to get you started if this is your first Flutter project:
+## 🚀 Cómo comenzar:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+1. **Clona este repositorio**:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+   ```bash
+   git clone [url-del-repositorio]

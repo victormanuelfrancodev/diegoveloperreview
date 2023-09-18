@@ -1,4 +1,6 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:diegoveloperreview/models/result_product.dart';
+import 'package:diegoveloperreview/widgets/cell_list_products.dart';
 import 'package:flutter/material.dart';
 
 import '../apimanager/api_manager.dart';
@@ -18,11 +20,7 @@ class ListProducts extends StatelessWidget {
               itemCount: result.length,
               itemBuilder: (context, index) {
                 Resultproduct product = result[index];
-                return ListTile(
-                  title: Text(product.title),
-                  subtitle: Text(product.description),
-                  leading: Image.network(product.images[0]),
-                );
+                return CellListProducts(product: product);
               },
             );
           } else {
