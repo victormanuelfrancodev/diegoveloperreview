@@ -14,8 +14,8 @@ class CellListProducts extends StatelessWidget {
         Navigator.push(context, MaterialPageRoute(builder: (context) => DetailProduct(product: product)));
       },
       child: ListTile(
-        title: Text(product.title),
-        subtitle: Text(product.description),
+        title: Text(product.title, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 23,)),
+        subtitle: Text(product.description, style: TextStyle(fontSize: 18,)),
         leading: CachedNetworkImage(
           imageUrl: product.images[0],
           placeholder: (context, url) => CircularProgressIndicator(),
