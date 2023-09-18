@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:diegoveloperreview/models/result_product.dart';
 import 'package:diegoveloperreview/widgets/cell_list_products.dart';
+import 'package:diegoveloperreview/widgets/user.dart';
 import 'package:flutter/material.dart';
 
 import '../apimanager/api_manager.dart';
@@ -42,10 +43,11 @@ class _ListProductsState extends State<ListProducts> with TickerProviderStateMix
         if (products.isNotEmpty) {
           return Scaffold(
             appBar: AppBar(
-              title: Text("Productos"),
+              title: Text("Primer Code Review DiegoVeloper"),
             ),
             body: Column(
               children: [
+                User(),
                 Expanded(
                   child: TabBarView(
                     controller: _tabController,
