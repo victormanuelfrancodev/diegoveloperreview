@@ -5,29 +5,42 @@ import 'package:flutter/material.dart';
 
 import '../apimanager/api_manager.dart';
 
-class ListProducts extends StatelessWidget {
-  const ListProducts({super.key});
+class ListProducts extends StatefulWidget {
+  ListProducts({Key? key}) : super(key: key);
+
+  @override
+  _ListProductsState createState() => _ListProductsState();
+}
+
+class _ListProductsState extends State<ListProducts> {
+  final ValueNotifier<List<Resultproduct>> productListNotifier = ValueNotifier<List<Resultproduct>>([]);
+
+  @override
+  void initState() {
+    super.initState();
+    _refreshProducts();
+  }
+
+  Future<void> _refreshProducts() async {
+    List<Resultproduct> products = await getAllProductList();
+    productListNotifier.value = products;
+  }
 
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder<List<Resultproduct>>(
-      future: getAllProductList(),
-      builder: (context, snapshot) {
-        if(snapshot.connectionState == ConnectionState.done) {
-          if(snapshot.hasData) {
-            List<Resultproduct> result = snapshot.data!;
-            return ListView.builder(
-              itemCount: result.length,
+    return ValueListenableBuilder<List<Resultproduct>>(
+      valueListenable: productListNotifier,
+      builder: (context, products, child) {
+        if (products.isNotEmpty) {
+          return RefreshIndicator(
+            onRefresh: _refreshProducts,
+            child: ListView.builder(
+              itemCount: products.length,
               itemBuilder: (context, index) {
-                Resultproduct product = result[index];
-                return CellListProducts(product: product);
+                return CellListProducts(product: products[index]);
               },
-            );
-          } else {
-            return Center(
-              child: Text('No data'),
-            );
-          }
+            ),
+          );
         } else {
           return Center(
             child: CircularProgressIndicator(),
@@ -35,5 +48,11 @@ class ListProducts extends StatelessWidget {
         }
       },
     );
+  }
+
+  @override
+  void dispose() {
+    productListNotifier.dispose();
+    super.dispose();
   }
 }
