@@ -19,6 +19,16 @@ class DetailProduct extends StatelessWidget {
           Text(product.title, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 23,),),
           SizedBox(height: 8.0),
           Text(product.description),
+          Text("Category:"),
+          Text(product.category.name.toString()),
+          Container(
+            width: 25,
+            height: 25,
+            child: CachedNetworkImage(
+            imageUrl: product.category.image,
+            placeholder: (context, url) => Center(child: Container( width: 50, height:50, child: CircularProgressIndicator())),
+            errorWidget: (context, url, error) => Icon(Icons.error),
+          ),),
           CarouselSlider(
             options: CarouselOptions(height: 400.0),
             items: product.images.map((image) {
