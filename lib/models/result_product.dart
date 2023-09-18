@@ -2,9 +2,12 @@ import 'dart:convert';
 
 import 'category.dart';
 
-List<Resultproduct> resultproductFromJson(String str) => List<Resultproduct>.from(json.decode(str).map((x) => Resultproduct.fromJson(x)));
+List<Resultproduct> resultproductFromJson(String str) =>
+    List<Resultproduct>.from(
+        json.decode(str).map((x) => Resultproduct.fromJson(x)));
 
-String resultproductToJson(List<Resultproduct> data) => json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
+String resultproductToJson(List<Resultproduct> data) =>
+    json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
 
 class Resultproduct {
   int id;
@@ -28,24 +31,24 @@ class Resultproduct {
   });
 
   factory Resultproduct.fromJson(Map<String, dynamic> json) => Resultproduct(
-    id: json["id"],
-    title: json["title"],
-    price: json["price"],
-    description: json["description"],
-    images: List<String>.from(json["images"].map((x) => x)),
-    creationAt: DateTime.parse(json["creationAt"]),
-    updatedAt: DateTime.parse(json["updatedAt"]),
-    category: Category.fromJson(json["category"]),
-  );
+        id: json["id"],
+        title: json["title"],
+        price: json["price"],
+        description: json["description"],
+        images: List<String>.from(json["images"].map((x) => x)),
+        creationAt: DateTime.parse(json["creationAt"]),
+        updatedAt: DateTime.parse(json["updatedAt"]),
+        category: Category.fromJson(json["category"]),
+      );
 
   Map<String, dynamic> toJson() => {
-    "id": id,
-    "title": title,
-    "price": price,
-    "description": description,
-    "images": List<dynamic>.from(images.map((x) => x)),
-    "creationAt": creationAt.toIso8601String(),
-    "updatedAt": updatedAt.toIso8601String(),
-    "category": category.toJson(),
-  };
+        "id": id,
+        "title": title,
+        "price": price,
+        "description": description,
+        "images": List<dynamic>.from(images.map((x) => x)),
+        "creationAt": creationAt.toIso8601String(),
+        "updatedAt": updatedAt.toIso8601String(),
+        "category": category.toJson(),
+      };
 }

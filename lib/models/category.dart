@@ -16,18 +16,18 @@ class Category {
   });
 
   factory Category.fromJson(Map<String, dynamic> json) => Category(
-    id: json["id"],
-    name: nameValues.map[json["name"]]!,
-    image: json["image"],
-    creationAt: DateTime.parse(json["creationAt"]),
-    updatedAt: DateTime.parse(json["updatedAt"]),
-  );
+        id: json["id"],
+        name: nameValues.map[json["name"]]!,
+        image: json["image"],
+        creationAt: DateTime.parse(json["creationAt"]),
+        updatedAt: DateTime.parse(json["updatedAt"]),
+      );
 
   Map<String, dynamic> toJson() => {
-    "id": id,
-    "name": nameValues.reverse[name],
-    "image": image,
-    "creationAt": creationAt.toIso8601String(),
-    "updatedAt": updatedAt.toIso8601String(),
-  };
+        "id": id,
+        "name": nameValues.reverse[name],
+        "image": image,
+        "creationAt": creationAt.toIso8601String(),
+        "updatedAt": updatedAt.toIso8601String(),
+      };
 }

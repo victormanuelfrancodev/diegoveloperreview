@@ -1,10 +1,4 @@
-enum Name {
-  CLOTHES1,
-  DA,
-  FURNITURE,
-  OTHERS,
-  SHOES
-}
+enum Name { CLOTHES1, DA, FURNITURE, OTHERS, SHOES }
 
 final nameValues = EnumValues({
   "Clothes1": Name.CLOTHES1,

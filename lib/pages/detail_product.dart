@@ -16,7 +16,13 @@ class DetailProduct extends StatelessWidget {
       ),
       body: Column(
         children: <Widget>[
-          Text(product.title, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 23,),),
+          Text(
+            product.title,
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 23,
+            ),
+          ),
           SizedBox(height: 8.0),
           Text(product.description),
           Text("Category:"),
@@ -25,10 +31,15 @@ class DetailProduct extends StatelessWidget {
             width: 25,
             height: 25,
             child: CachedNetworkImage(
-            imageUrl: product.category.image,
-            placeholder: (context, url) => Center(child: Container( width: 50, height:50, child: CircularProgressIndicator())),
-            errorWidget: (context, url, error) => Icon(Icons.error),
-          ),),
+              imageUrl: product.category.image,
+              placeholder: (context, url) => Center(
+                  child: Container(
+                      width: 50,
+                      height: 50,
+                      child: CircularProgressIndicator())),
+              errorWidget: (context, url, error) => Icon(Icons.error),
+            ),
+          ),
           CarouselSlider(
             options: CarouselOptions(height: 400.0),
             items: product.images.map((image) {
@@ -39,10 +50,13 @@ class DetailProduct extends StatelessWidget {
                       margin: EdgeInsets.symmetric(horizontal: 5.0),
                       child: CachedNetworkImage(
                         imageUrl: image,
-                        placeholder: (context, url) => Center(child: Container( width: 50, height:50, child: CircularProgressIndicator())),
+                        placeholder: (context, url) => Center(
+                            child: Container(
+                                width: 50,
+                                height: 50,
+                                child: CircularProgressIndicator())),
                         errorWidget: (context, url, error) => Icon(Icons.error),
-                      )
-                  );
+                      ));
                 },
               );
             }).toList(),
