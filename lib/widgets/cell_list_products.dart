@@ -26,10 +26,13 @@ class CellListProducts extends StatelessWidget {
             style: TextStyle(
               fontSize: 18,
             )),
-        leading: CachedNetworkImage(
-          imageUrl: product.images[0],
-          placeholder: (context, url) => CircularProgressIndicator(),
-          errorWidget: (context, url, error) => Icon(Icons.error),
+        leading: Hero(
+          tag: "Hero-${product.id}",
+          child: CachedNetworkImage(
+            imageUrl: product.images[0],
+            placeholder: (context, url) => CircularProgressIndicator(),
+            errorWidget: (context, url, error) => Icon(Icons.error),
+          ),
         ),
       ),
     );

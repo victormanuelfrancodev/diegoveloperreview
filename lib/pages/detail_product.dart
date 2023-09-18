@@ -42,20 +42,37 @@ class DetailProduct extends StatelessWidget {
           ),
           CarouselSlider(
             options: CarouselOptions(height: 400.0),
-            items: product.images.map((image) {
+            items: product.images.asMap().entries.map((entry) {
+              int idMapImage = entry.key;
+              String image = entry.value;
               return Builder(
                 builder: (BuildContext context) {
                   return Container(
                       width: MediaQuery.of(context).size.width,
                       margin: EdgeInsets.symmetric(horizontal: 5.0),
-                      child: CachedNetworkImage(
+                      child: idMapImage == 0
+                          ? Hero(
+                        tag: 'Hero-${product.id}',
+                        child: CachedNetworkImage(
+                          imageUrl: image,
+                          placeholder: (context, url) => Center(
+                              child: Container(
+                                  width: 50,
+                                  height: 50,
+                                  child: CircularProgressIndicator())),
+                          errorWidget: (context, url, error) =>
+                              Icon(Icons.error),
+                        ),
+                      )
+                          : CachedNetworkImage(
                         imageUrl: image,
                         placeholder: (context, url) => Center(
                             child: Container(
                                 width: 50,
                                 height: 50,
                                 child: CircularProgressIndicator())),
-                        errorWidget: (context, url, error) => Icon(Icons.error),
+                        errorWidget: (context, url, error) =>
+                            Icon(Icons.error),
                       ));
                 },
               );
