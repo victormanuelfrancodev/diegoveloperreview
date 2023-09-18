@@ -18,12 +18,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('My First DiegoVeloper Review'),
-        ),
-        body: ListProducts(),
-      ),
+      home: ListProducts(),
     );
   }
 }
