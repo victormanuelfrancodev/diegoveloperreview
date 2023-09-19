@@ -10,8 +10,10 @@ Este proyecto en Flutter se creó con el propósito de listar productos de [escu
 - **Detalles del Producto**: Al hacer clic en un producto, se muestra una pantalla de detalles con información adicional. Se usa el package carousel_slider 4.2.1 para listar las imagenes hermosas en un carrousel de niños
 - **Refresh indicator**: Para actualizar la lista de productos, se usa el widget RefreshIndicator. (Se intento no usar un manejador de estados entonces use un ValueNotifier y Stateful para actualizar la lista de productos)
 - **Hero Animation**: Para una experiencia de usuario más agradable y exquisita, se usa la animación hero, pero es algo muy sencillito. 
+- **Tabbar**: Se agrega un tabbar para agrupar todo por categorias.
+- 
 ## 🚀 Cómo comenzar:
-- **Tabbar**: Se agrega un tabbar para agrupar todo por categorias. 
+
 
 1. **Clona este repositorio**:
 
