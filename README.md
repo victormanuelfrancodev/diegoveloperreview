@@ -11,7 +11,7 @@ Este proyecto en Flutter se creó con el propósito de listar productos de [escu
 - **Refresh indicator**: Para actualizar la lista de productos, se usa el widget RefreshIndicator. (Se intento no usar un manejador de estados entonces use un ValueNotifier y Stateful para actualizar la lista de productos)
 - **Hero Animation**: Para una experiencia de usuario más agradable y exquisita, se usa la animación hero, pero es algo muy sencillito. 
 - **Tabbar**: Se agrega un tabbar para agrupar todo por categorias.
-- 
+
 ## 🚀 Cómo comenzar:
 
 
